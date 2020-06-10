@@ -13,12 +13,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 app.secret_key = 'dany'
 api = Api(app)
 
-# Nb SQLAlchemy can create the table instaed of using the create_table.py to create the tables
-
-
-@app.before_first_request
-def create_table():
-    db.create_all()
 
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = 'False'
